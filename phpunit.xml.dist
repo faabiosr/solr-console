@@ -12,7 +12,7 @@
          bootstrap="tests/bootstrap.php"
         >
     <testsuites>
-        <testsuite name="Logger Service Provider">
+        <testsuite name="Solr Management Console">
             <directory>./tests</directory>
         </testsuite>
     </testsuites>

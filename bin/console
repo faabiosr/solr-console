@@ -1,0 +1,6 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__ . DIRECTORY_SEPARATOR . "../bootstrap.php";
+
+(new \Solr\Console\Application())->run();
