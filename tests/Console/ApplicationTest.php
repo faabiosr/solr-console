@@ -32,6 +32,18 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
             [
                 'collection:list',
                 'Solr\Console\Command\Collection\All'
+            ],
+            [
+                'collection:reload',
+                'Solr\Console\Command\Collection\Reload'
+            ],
+            [
+                'collection:delete',
+                'Solr\Console\Command\Collection\Remove'
+            ],
+            [
+                'collection:create',
+                'Solr\Console\Command\Collection\Create'
             ]
         ];
     }

@@ -22,6 +22,9 @@ class Application extends Console\Application
         parent::__construct($this->name);
 
         $this->add(new Command\Collection\All());
+        $this->add(new Command\Collection\Reload());
+        $this->add(new Command\Collection\Remove());
+        $this->add(new Command\Collection\Create());
     }
 
     /**
