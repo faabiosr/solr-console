@@ -1,0 +1,41 @@
+{
+    "name": "solr/console",
+    "description": "Solr Management Console",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "solr",
+        "solr cloud",
+        "management",
+        "console",
+        "zookeeper"
+    ],
+    "authors": [
+        {
+            "name": "Fabio da Silva Ribeiro",
+            "email": "fabiorphp@gmail.com"
+        }
+    ],
+    "support": {
+        "issue": "https://github.com/fabiorphp/solr-console/issues"
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.5.0",
+        "guzzlehttp/guzzle": "~5.2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.6.4",
+        "fabpot/php-cs-fixer": "~1.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Solr\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Solr\\": "tests/"
+        }
+    }
+}
