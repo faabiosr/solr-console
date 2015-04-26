@@ -22,12 +22,16 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.4.0",
-        "guzzlehttp/guzzle": "~5.2.0"
+        "guzzlehttp/guzzle": "~5.2.0",
+        "symfony/console": "~2.6.6"
     },
     "require-dev": {
         "phpunit/phpunit": "@stable",
         "fabpot/php-cs-fixer": "@stable"
     },
+    "bin": [
+        "solr"
+    ],
     "autoload": {
         "psr-4": {
             "Solr\\": "src/"

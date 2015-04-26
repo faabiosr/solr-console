@@ -1,0 +1,21 @@
+#!/usr/bin/env php
+<?php
+
+if (!ini_get('date.timezone')) {
+    ini_set('date.timezone', 'UTC');
+}
+
+if (!defined('DS')) {
+    define('DS', DIRECTORY_SEPARATOR);
+}
+
+define('ROOT', realpath(__DIR__) . DS);
+
+if (file_exists($autoload = ROOT . '../../autoload.php')) {
+    require $autoload;
+    unset($autoload);
+} else {
+    require ROOT . 'vendor/autoload.php';
+}
+
+(new \Solr\Console\Application())->run();
