@@ -25,6 +25,10 @@ class Application extends Console\Application
         $this->add(new Command\Collection\Reload());
         $this->add(new Command\Collection\Remove());
         $this->add(new Command\Collection\Create());
+        $this->add(new Command\Schema\All());
+        $this->add(new Command\Schema\LinkConfig());
+        $this->add(new Command\Schema\Download());
+        $this->add(new Command\Schema\Upload());
     }
 
     /**

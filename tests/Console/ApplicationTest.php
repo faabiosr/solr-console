@@ -44,6 +44,22 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
             [
                 'collection:create',
                 'Solr\Console\Command\Collection\Create'
+            ],
+            [
+                'schema:list',
+                'Solr\Console\Command\Schema\All'
+            ],
+            [
+                'schema:link',
+                'Solr\Console\Command\Schema\LinkConfig'
+            ],
+            [
+                'schema:download',
+                'Solr\Console\Command\Schema\Download'
+            ],
+            [
+                'schema:upload',
+                'Solr\Console\Command\Schema\Upload'
             ]
         ];
     }
