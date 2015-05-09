@@ -22,6 +22,8 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.4.0",
+        "ext-zookeeper": "*",
+        "ext-curl": "*",
         "guzzlehttp/guzzle": "~5.2.0",
         "symfony/console": "~2.6.6"
     },
