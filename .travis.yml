@@ -11,7 +11,10 @@ php:
 
 before_install:
   - sudo apt-get install libzookeeper-mt-dev
-  - sudo apt-get install zookeeper
+  - wget http://ftp.unicamp.br/pub/apache/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz || exit 1
+  - tar xvf zookeeper-3.4.6.tar.gz || exit 1
+  - mv zookeeper-3.4.6/conf/zoo_sample.cfg zookeeper-3.4.6/conf/zoo.cfg
+  - zookeeper-3.4.6/bin/zkServer.sh start
   - echo "\n\n\n\n\n\n\n\n\n" | pecl install zookeeper-0.2.2
   - echo "extension=zookeeper.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
 

@@ -26,9 +26,7 @@ class Upload extends Command
         $path = '/configs';
 
         if (!$this->client->exists($path)) {
-            $output->writeln('<fg=red>Configs node not found</fg=red>');
-
-            return 1;
+            $this->createFile($path);
         }
 
         $path = "{$path}/{$name}";

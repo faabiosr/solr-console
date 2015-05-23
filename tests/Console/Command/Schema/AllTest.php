@@ -15,7 +15,7 @@ class AllTest extends \PHPUnit_Framework_TestCase
      * @expectedException RuntimeException
      * @expectedExceptionMessage Please define a host or Zookeeper client instance
      */
-    public function testShouldThrowExceptionWhenExecuteWithoutHttpClient()
+    public function testShouldThrowExceptionWhenExecuteWithoutHost()
     {
         $tester = new CommandTester(new All());
         $tester->execute([]);
@@ -35,6 +35,19 @@ class AllTest extends \PHPUnit_Framework_TestCase
         $tester  = new CommandTester($command);
 
         $tester->execute([]);
+
+        $this->assertRegExp('/Configs node not found/', $tester->getDisplay());
+        $this->assertEquals(1, $tester->getStatusCode());
+    }
+
+    public function testExecuteShouldRetrieveErrorWhenNodeNotExistsWithHost()
+    {
+        $command = new All();
+        $tester  = new CommandTester($command);
+
+        $tester->execute([
+            '--host' => '127.0.0.1:2181'
+        ]);
 
         $this->assertRegExp('/Configs node not found/', $tester->getDisplay());
         $this->assertEquals(1, $tester->getStatusCode());
