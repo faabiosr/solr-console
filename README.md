@@ -2,9 +2,9 @@
 [![Build Status](https://img.shields.io/travis/fabiorphp/solr-console/master.svg?style=flat-square)](https://travis-ci.org/fabiorphp/solr-console)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/fabiorphp/solr-console/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/fabiorphp/solr-console/?branch=master)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/fabiorphp/solr-console/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/fabiorphp/solr-console/?branch=master)
-[![Latest Stable Version](https://img.shields.io/packagist/v/fabiorphp/solr-console.svg?style=flat-square)](https://packagist.org/packages/solr/console)
-[![Total Downloads](https://img.shields.io/packagist/dt/fabiorphp/solr-console.svg?style=flat-square)](https://packagist.org/packages/solr/console)
-[![License](https://img.shields.io/packagist/l/fabiorphp/solr-console.svg?style=flat-square)](https://packagist.org/packages/solr/console)
+[![Latest Stable Version](https://img.shields.io/packagist/v/solr/console.svg?style=flat-square)](https://packagist.org/packages/solr/console)
+[![Total Downloads](https://img.shields.io/packagist/dt/solr/console.svg?style=flat-square)](https://packagist.org/packages/solr/console)
+[![License](https://img.shields.io/packagist/l/solr/console.svg?style=flat-square)](https://packagist.org/packages/solr/console)
 
 An application that provides a management console for [SolrCloud](http://lucene.apache.org/solr/)
 
@@ -53,6 +53,7 @@ $application->add(new Schema\All($zkClient);
 $application->add(new Schema\LinkConfig($zkClient);
 $application->add(new Schema\Download($zkClient);
 $application->add(new Schema\Upload($zkClient);
+$application->add(new Schema\Remove($zkClient);
 $application->run();
 ```
 Open the command class and see the constructor params.

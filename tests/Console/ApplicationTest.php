@@ -60,6 +60,10 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
             [
                 'schema:upload',
                 'Solr\Console\Command\Schema\Upload'
+            ],
+            [
+                'schema:delete',
+                'Solr\Console\Command\Schema\Remove'
             ]
         ];
     }

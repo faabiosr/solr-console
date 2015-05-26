@@ -29,6 +29,7 @@ class Application extends Console\Application
         $this->add(new Command\Schema\LinkConfig());
         $this->add(new Command\Schema\Download());
         $this->add(new Command\Schema\Upload());
+        $this->add(new Command\Schema\Remove());
     }
 
     /**
