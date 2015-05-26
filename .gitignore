@@ -2,3 +2,6 @@
 /vendor/
 composer.lock
 /build/
+.vagrant
+Vagrantfile
+ansible/
