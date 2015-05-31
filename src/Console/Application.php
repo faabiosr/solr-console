@@ -12,14 +12,14 @@ class Application extends Console\Application
     /**
      * @var string
      */
-    private $name = 'Solr Management Console';
+    private $title = 'Solr Management Console';
 
     /**
      * Constructor.
      */
     public function __construct()
     {
-        parent::__construct($this->name);
+        parent::__construct($this->title);
 
         $this->add(new Command\Collection\All());
         $this->add(new Command\Collection\Reload());

@@ -14,14 +14,14 @@ use Symfony\Component\Console\Output\OutputInterface;
 abstract class Command extends BaseCommand
 {
     /**
-     * @var GuzzleHttp\Client
+     * @var \GuzzleHttp\Client
      */
     protected $client;
 
     /**
      * Constructor.
      *
-     * @param GuzzleHttp\Client $client
+     * @param \GuzzleHttp\Client $client
      */
     public function __construct(Client $client = null)
     {
