@@ -25,7 +25,7 @@ class Download extends Command
         $path = '/configs';
 
         if (!$this->client->exists($path)) {
-            $output->writeln('<fg=red>Configs node not found</fg=red>');
+            $output->writeln("<fg=red>Config set {$name} not found</fg=red>");
 
             return 1;
         }

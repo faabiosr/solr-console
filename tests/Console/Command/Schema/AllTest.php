@@ -36,7 +36,7 @@ class AllTest extends \PHPUnit_Framework_TestCase
 
         $tester->execute([]);
 
-        $this->assertRegExp('/Configs node not found/', $tester->getDisplay());
+        $this->assertRegExp('/No schemas found/', $tester->getDisplay());
         $this->assertEquals(1, $tester->getStatusCode());
     }
 
@@ -49,7 +49,7 @@ class AllTest extends \PHPUnit_Framework_TestCase
             '--host' => '127.0.0.1:2181'
         ]);
 
-        $this->assertRegExp('/Configs node not found/', $tester->getDisplay());
+        $this->assertRegExp('/No schemas found/', $tester->getDisplay());
         $this->assertEquals(1, $tester->getStatusCode());
     }
 

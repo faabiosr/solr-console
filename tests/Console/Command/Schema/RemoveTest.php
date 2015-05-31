@@ -16,6 +16,7 @@ class RemoveTest extends \PHPUnit_Framework_TestCase
     public function tearDown()
     {
         $nodes = [
+            '/collections/store2',
             '/collections/store',
             '/collections/test',
             '/collections',
@@ -46,7 +47,7 @@ class RemoveTest extends \PHPUnit_Framework_TestCase
 
         $tester->execute(['name' => 'test']);
 
-        $this->assertRegExp('/Configs node not found/', $tester->getDisplay());
+        $this->assertRegExp('/The config set test not found/', $tester->getDisplay());
         $this->assertEquals(1, $tester->getStatusCode());
     }
 
@@ -143,6 +144,26 @@ class RemoveTest extends \PHPUnit_Framework_TestCase
             'name'       => 'store',
             'config-dir' => __DIR__ . '/../fixture/schema/conf',
         ]);
+
+        $tester = new CommandTester(new Remove($this->client));
+        $tester->execute([
+            'name'   => 'store',
+        ]);
+
+        $this->assertRegExp('/The config set store was deleted/', $tester->getDisplay());
+        $this->assertEquals(0, $tester->getStatusCode());
+        $this->assertFalse((bool) $this->client->exists('/configs/store/schema.xml'));
+    }
+
+    public function testShouldRemoveSchemaWithUnlinkedCollection()
+    {
+        $tester  = new CommandTester(new Upload($this->client));
+        $tester->execute([
+            'name'       => 'store',
+            'config-dir' => __DIR__ . '/../fixture/schema/conf',
+        ]);
+
+        $this->createCollection('store2', 'store2');
 
         $tester = new CommandTester(new Remove($this->client));
         $tester->execute([

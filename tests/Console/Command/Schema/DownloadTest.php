@@ -69,7 +69,7 @@ class DownloadTest extends \PHPUnit_Framework_TestCase
 
         $tester->execute(['name' => 'test', 'dest' => '/tmp']);
 
-        $this->assertRegExp('/Configs node not found/', $tester->getDisplay());
+        $this->assertRegExp('/Config set test not found/', $tester->getDisplay());
         $this->assertEquals(1, $tester->getStatusCode());
     }
 

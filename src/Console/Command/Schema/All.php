@@ -19,7 +19,7 @@ class All extends Command
         $path = '/configs';
 
         if (!$this->client->exists($path)) {
-            $output->writeln('<fg=red>Configs node not found</fg=red>');
+            $output->writeln('<fg=yellow>No schemas found</fg=yellow>');
 
             return 1;
         }

@@ -23,7 +23,7 @@ class Remove extends Command
         $path = '/configs/'.$name;
 
         if (!$this->client->exists($path)) {
-            $output->writeln('<fg=red>Configs node not found</fg=red>');
+            $output->writeln("<fg=red>The config set {$name} not found</fg=red>");
 
             return 1;
         }
