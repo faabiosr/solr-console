@@ -116,4 +116,19 @@ class AllTest extends \PHPUnit_Framework_TestCase
         $this->assertRegExp('/store/', $tester->getDisplay());
         $this->assertEquals(0, $tester->getStatusCode());
     }
+
+    public function testShouldRetrieveCollectionNotFound()
+    {
+        $tester  = new CommandTester(
+            new All()
+        );
+
+        $tester->execute([
+            '--host' => '127.0.0.1',
+            '--port' => '8983'
+        ]);
+
+        $this->assertRegExp('/No collections found/', $tester->getDisplay());
+        $this->assertEquals(0, $tester->getStatusCode());
+    }
 }
