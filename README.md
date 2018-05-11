@@ -12,7 +12,7 @@ An application that provides a management console for [SolrCloud](http://lucene.
 To use this package, is necessary install the [Zookeeper Pecl Package](https://github.com/andreiz/php-zookeeper).
 
 ## Instalation
-The package is available on [Packagist](http://packagist.org/packages/dafiti/logger-service-provider).
+The package is available on [Packagist](http://packagist.org/packages/solr/console).
 Autoloading is [PSR-4](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md) compatible.
 ```json
 {
